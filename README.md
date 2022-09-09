@@ -1,61 +1,66 @@
-Method POST
+### Method POST
 http://localhost:8000/graphql
 
 Pakai Postman, tab Body GraphQL
 
+### QUERY
 
-QUERY
-
-Get semua data movies
+#### Get semua data movies
+```graphql
 {
   movies {
 	id,
-	title,
-	director
+	title
   }
 }
+```
 
-Get berdasarkan ID
+#### Get berdasarkan ID
+```graphql
 {
-  movie(id: 4) {
+  movie(id: 1) {
 	title,
 	director
   }
 }
+```
 
-Create data movie
+#### Create data movie
+```graphql
 mutation createMovie {
 createMovie(
-    title: "Gone Girl", 
-    director: "David Fincher", 
+    title: "Spider-Man: No Way Home", 
+    director: "Jon Watts", 
     language: "English", 
-    year_released: "2014") 
+    year_released: "2021") 
 	{
         id
 	    title
-	    director
 	}
 }
+```
 
-Update data movie
-mutation updateMovie {
+#### Update data movie
+```graphql
 mutation updateMovie {
 updateMovie(
-  id: 2, 
-  title: "Stand by Me", 
-  director: "Rob Reiner", 
+  id: 1, 
+  title: "Thor: Love and Thunder", 
+  director: "Taika Waititi", 
   language: "English", 
-  year_released: "1986") 
+  year_released: "2022") 
   {
  	id
 	title
-	director
   }
 }
+```
 
-Delete data movie
+#### Delete data movie
+```graphql
 mutation deleteMovie {
 deleteMovie(
     id: 2
   )
 }
+```
